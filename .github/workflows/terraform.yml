@@ -25,11 +25,8 @@ jobs:
           aws-region: us-east-1
 
       - name: Terraform Init
-        run: terraform init -backend-config="bucket=cloudbox-terraform-state-20245274" \
-                      -backend-config="key=cloudbox-enterprise/terraform.tfstate" \
-                      -backend-config="region=us-east-1" \
-                      -backend-config="dynamodb_table=terraform-lock"
-                      
+        run: terraform init -backend-config="bucket=cloudbox-terraform-state-20245274" -backend-config="key=cloudbox-enterprise/terraform.tfstate" -backend-config="region=us-east-1" -backend-config="dynamodb_table=terraform-lock"
+
       - name: Import Existing Resources
         run: |
           terraform import aws_s3_bucket.terraform_backend cloudbox-terraform-state-20245274

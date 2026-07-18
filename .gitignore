@@ -6,7 +6,6 @@ terraform.tfvars
 node_modules/
 npm-debug.log
 yarn-error.log
-*.zip
 dist/
 build/
 .env

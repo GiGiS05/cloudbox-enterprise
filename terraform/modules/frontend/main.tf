@@ -49,7 +49,7 @@ resource "aws_s3_bucket" "frontend" {
     Owner       = "Cloud Team"
   }
 
- 
+
   # esto evita destruccion accidental
 
   # lifecycle {

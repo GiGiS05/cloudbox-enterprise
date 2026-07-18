@@ -27,10 +27,6 @@ jobs:
       - name: Terraform Init
         run: terraform init -backend-config="bucket=cloudbox-terraform-state-20245274" -backend-config="key=cloudbox-enterprise/terraform.tfstate" -backend-config="region=us-east-1" -backend-config="dynamodb_table=terraform-lock"
 
-      - name: Import Existing Resources
-        run: |
-          terraform import aws_lambda_event_source_mapping.sqs_trigger c069288a-d844-4ed5-8f8b-be257a0afb25
-
       - name: Terraform Format
         run: terraform fmt -check -diff > fmt.log || (cat fmt.log && exit 1)
 
